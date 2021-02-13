@@ -78,7 +78,7 @@ else{
                   />
                   <TextField name="tags" 
                   varaint ="outlined" 
-                  label ="Tags" 
+                  label ="Tags (separated by comma)" 
                   fullWidth value={postData.tags}
                   onChange={(e) =>setPostData({...postData,tags: e.target.value.split(',')})}
                   />
