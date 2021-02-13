@@ -1,3 +1,4 @@
+//Single meme frontend structure
 import React from 'react';
 import {Card ,CardActions, CardContent, CardMedia,Button,Typography} from '@material-ui/core/';
 import ThumbUpAltIcon from '@material-ui/icons/ThumbUpAlt';
@@ -22,7 +23,7 @@ const Post= ({post,setCurrentId}) => {
                   <Typography variant ="body2">{moment(post.dateOfCreation).fromNow()}</Typography>
                   
             <div className={classes.overlay}>
-                <Button style ={{color:'white'}} size="small" onClick={() => setCurrentId(post._id) }><MoreHorizIcon fontSize= "default" /></Button>
+                <Button style ={{color:'white'}} size="small" onClick={() => setCurrentId(post.id) }><MoreHorizIcon fontSize= "default" /></Button>
 
             </div>
             </div>
@@ -38,8 +39,8 @@ const Post= ({post,setCurrentId}) => {
               <Typography className={classes.title} variant ="body2" color="textSecondary" gutterBottom>{post.message}</Typography>
               </CardContent>
               <CardActions className={classes.cardActions}>
-        <Button size="small" color="primary" onClick={() => dispatch(likePost(post._id))}><ThumbUpAltIcon fontSize="small" /> Like {post.likeCounts} </Button>
-        <Button size="small" color="primary" onClick={() => dispatch(deletePost(post._id)) }><DeleteIcon fontSize="small" /> Delete</Button>
+        <Button size="small" color="primary" onClick={() => dispatch(likePost(post.id))}><ThumbUpAltIcon fontSize="small" /> Like {post.likeCounts} </Button>
+        <Button size="small" color="primary" onClick={() => dispatch(deletePost(post.id)) }><DeleteIcon fontSize="small" /> Delete</Button>
       </CardActions>
               
 

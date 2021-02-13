@@ -1,3 +1,4 @@
+//Frontend structure for posting and editing memes
 import React , {useState} from 'react';
 import { TextField,Button,Typography,Paper } from '@material-ui/core';
 import FileBase from 'react-file-base64';
@@ -7,7 +8,7 @@ import useStyles from './styles';
 
 import {createPost,updatePost } from '../../actions/posts';
 import { useEffect } from 'react';
-//import { updatePost } from '../../../../server/controllers/posts';
+
 
 
 const Form= ({currentId,setCurrentId}) => {
@@ -20,7 +21,7 @@ const Form= ({currentId,setCurrentId}) => {
 
     });
 
-    const post=useSelector((state) => currentId ? state.posts.find((p) => p._id===currentId ):null);
+    const post=useSelector((state) => currentId ? state.posts.find((p) => p.id===currentId ):null);
     const classes = useStyles();
     const dispatch = useDispatch();
     useEffect(() =>{
@@ -58,6 +59,7 @@ else{
                   varaint ="outlined" 
                   label ="Meme Owner" 
                   required={true}
+                  disabled={currentId?true:false}
                   fullWidth value={postData.name}
                   onChange={(e) =>setPostData({...postData,name: e.target.value})}
                   />

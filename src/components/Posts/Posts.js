@@ -1,3 +1,4 @@
+//Frontend Structure for displaying memes
 import React from 'react';
 import { Grid, circularProgress, CircularProgress} from '@material-ui/core';
 import Post from './Post/Post';
