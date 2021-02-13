@@ -1,8 +1,8 @@
 import axios from 'axios';
 
 //API Routes 
-// const url='https://memestream-backend-aakanksha.herokuapp.com/memes';
-const url = "http://localhost:5000/memes/"
+ const url='https://memestream-backend-aakanksha.herokuapp.com/memes';
+//const url = "http://localhost:5000/memes/"
 
  export const fetchPosts =() =>axios.get(url);
 
